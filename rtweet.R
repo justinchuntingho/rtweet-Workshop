@@ -22,7 +22,7 @@ access_token <- "1189518014959493121-4ih6Bwz2vFMuIpYJo2T3WuzjMuX5e8"
 access_token_secret <- "fqclBPkWyxz3t0msM7E6rVaHnFoexFjenT00neXNs18qc"
 
 token <- create_token(
-  app = "rstatsjournalismresearch",
+  app = "uped",
   consumer_key = api_key,
   consumer_secret = api_secret_key,
   access_token = access_token,
@@ -47,7 +47,7 @@ textplot_wordcloud(dfm)
 user_handles <- c("@UKLabour","@Conservatives", "@LibDems", "@theSNP")
 
 # Getting user timelines by handle
-tmls <- get_timelines(user_handles, n = 1000)
+tmls <- get_timelines(user_handles, n = 200)
 
 # Simple visualisation
 tmls %>%
