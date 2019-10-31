@@ -79,7 +79,7 @@ q <- "Trump"
 # of desired minutes. This method scales up to hours as well
 # (x * 60 = x mins, x * 60 * 60 = x hours)
 # Stream for 30 minutes
-streamtime <- 2 * 60
+streamtime <- 1 * 60
 
 # Filename to save json data (backup)
 filename <- "rtelect.json"
