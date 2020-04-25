@@ -1,8 +1,22 @@
 # ---
 # title: "Collecting Twitter Data using rtweet (workshop material)"
 # author: "Justin Ho"
-# last updated: "30/10/2019"
+# last updated: "25/04/2020"
 # ---
+
+################################################################
+#             Getting Twitter Developer Account                #
+################################################################
+#
+# To access Twitter API, you will need four sets of keys: API Key, API Secret Key, Access Token, Access Token Secret.
+# These are equivalent to the username and password you use when you login on Twitter, but for R.
+#
+# In order to do so, you need do two things, first, apply for a developer account:
+# https://www.extly.com/docs/autotweetng_joocial/tutorials/how-to-auto-post-from-joomla-to-twitter/apply-for-a-twitter-developer-account/#apply-for-a-developer-account
+#
+# Second, create a App and get the keys and secrets:
+# https://www.slickremix.com/docs/how-to-get-api-keys-and-tokens-for-twitter/
+#
 
 ################################################################
 #                           Setting Up                         #
@@ -15,7 +29,7 @@ install.packages("quanteda")
 # Load the library
 library(rtweet)
 
-# Copy and paste these from your developer account
+# Copy and paste these from your developer account, the following keys work, but not for long.
 api_key <- "lLkH2H1fe9MqfGDlSs80Ao8VN"
 api_secret_key <- "uQJCGYS1YKSxQc1SjD1WpcsPM2gnfXpIFrYdmjXwJfLEmUNCUb"
 access_token <- "1189518014959493121-4ih6Bwz2vFMuIpYJo2T3WuzjMuX5e8"
@@ -32,7 +46,7 @@ token <- create_token(
 #                      Search by Keywords                      #
 ################################################################
 
-tweets <- search_tweets("#Brexit", n = 1000, retryonratelimit = FALSE)
+tweets <- search_tweets("#COVIDIOTS", n = 500, retryonratelimit = FALSE)
 
 library(quanteda)
 corpus <- corpus(tweets, text_field = "text")
@@ -72,7 +86,7 @@ tmls %>%
 ################################################################
 
 # Stream keywords used to filter tweets
-q <- "Trump"
+q <- "#COVID19"
 
 # Stream time in seconds so for one minute set timeout = 60
 # For larger chunks of time, I recommend multiplying 60 by the number
