@@ -30,13 +30,13 @@ install.packages("quanteda")
 library(rtweet)
 
 # Copy and paste these from your developer account, the following keys work, but not for long.
-api_key <- "lLkH2H1fe9MqfGDlSs80Ao8VN"
-api_secret_key <- "uQJCGYS1YKSxQc1SjD1WpcsPM2gnfXpIFrYdmjXwJfLEmUNCUb"
-access_token <- "1189518014959493121-4ih6Bwz2vFMuIpYJo2T3WuzjMuX5e8"
-access_token_secret <- "fqclBPkWyxz3t0msM7E6rVaHnFoexFjenT00neXNs18qc"
+api_key <- "SJqRPYxvDXlvezYWnGp9YYewP"
+api_secret_key <- "lOEgdnMRxfNWGOxjRvxwwIJHH6QbxuVXW44qS5B5JTtOlmhlwv"
+access_token <- "1189518014959493121-81E4FGHqQECAAx9kcoWU9OVthJoOmi"
+access_token_secret <- "A4c0Ygv6vZHAORXzISqSTpehzo4JzbndBznE3UXzNFonC"
 
 token <- create_token(
-  app = "uped",
+  app = "cdcs",
   consumer_key = api_key,
   consumer_secret = api_secret_key,
   access_token = access_token,
@@ -93,13 +93,13 @@ q <- "#COVID19"
 # of desired minutes. This method scales up to hours as well
 # (x * 60 = x mins, x * 60 * 60 = x hours)
 # Stream for 30 minutes
-streamtime <- 1 * 60
+streamtime <- 20
 
 # Filename to save json data (backup)
 filename <- "rtelect.json"
 
 # Start streaming
-rt <- stream_tweets(q = q, timeout = streamtime, file_name = filename)
+rt <- stream_tweets(q = q, timeout = streamtime, file_name = filename, language = "en")
 
 # Plot time series of all tweets aggregated by second
 ts_plot(rt, by = "secs")
