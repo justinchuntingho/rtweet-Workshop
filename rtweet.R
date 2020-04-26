@@ -24,7 +24,8 @@
 
 # Install the library
 install.packages("rtweet")
-install.packages("quanteda")
+# install.packages("quanteda")
+# install.packages("tidyverse")
 
 # Load the library
 library(rtweet)
@@ -46,7 +47,7 @@ token <- create_token(
 #                      Search by Keywords                      #
 ################################################################
 
-tweets <- search_tweets("#COVIDIOTS", n = 500, retryonratelimit = FALSE)
+tweets <- search_tweets("#COVIDIOTS", n = 100, retryonratelimit = FALSE)
 
 library(quanteda)
 corpus <- corpus(tweets, text_field = "text")
@@ -61,7 +62,7 @@ textplot_wordcloud(dfm)
 user_handles <- c("@UKLabour","@Conservatives", "@LibDems", "@theSNP")
 
 # Getting user timelines by handle
-tmls <- get_timelines(user_handles, n = 200)
+tmls <- get_timelines(user_handles, n = 100)
 
 # Simple visualisation
 tmls %>%
