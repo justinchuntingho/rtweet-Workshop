@@ -1,7 +1,7 @@
 # ---
 # title: "Collecting Twitter Data using rtweet (workshop material)"
 # author: "Justin Ho"
-# last updated: "25/04/2020"
+# last updated: "10/06/2020"
 # ---
 
 ################################################################
@@ -31,10 +31,10 @@ install.packages("rtweet")
 library(rtweet)
 
 # Copy and paste these from your developer account, the following keys work, but not for long.
-api_key <- "SJqRPYxvDXlvezYWnGp9YYewP"
-api_secret_key <- "lOEgdnMRxfNWGOxjRvxwwIJHH6QbxuVXW44qS5B5JTtOlmhlwv"
-access_token <- "1189518014959493121-81E4FGHqQECAAx9kcoWU9OVthJoOmi"
-access_token_secret <- "A4c0Ygv6vZHAORXzISqSTpehzo4JzbndBznE3UXzNFonC"
+api_key <- "2NN7fCU2m8eh7NTTLnO2Giayn"
+api_secret_key <- "MWC7N2O5d9QtM6IspfGK3rpklr0P1qmwQ1psG06zQobyDFAEIn"
+access_token <- "1189518014959493121-5BMCiGvE1IMoTEgf0UwLLhrELYo2Ca"
+access_token_secret <- "dFEqog5WM9lIqGOSv7VWpO550Zn4uiOB7WrSbE2HyyOCV"
 
 token <- create_token(
   app = "cdcs",
@@ -87,7 +87,7 @@ tmls %>%
 ################################################################
 
 # Stream keywords used to filter tweets
-q <- "#COVID19"
+q <- "#BlackLivesMatter"
 
 # Stream time in seconds so for one minute set timeout = 60
 # For larger chunks of time, I recommend multiplying 60 by the number
